@@ -7,7 +7,7 @@ var app = express();
 
 var storage = multer.diskStorage({
     destination: function(req, file, cb) {
-        cb(null, './uploads/')
+        cb(null, './uploads/');
     },
     filename: function(req, file, cb) {
         cb(null, file.originalname);
@@ -22,18 +22,18 @@ app.use('/', express.static(path.join(__dirname, 'public')));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.post('/upload', upload.single('fileupload-input'), function(req, res, next) {
-    res.send('ok')
+    res.send('ok');
 });
 
 app.post('/pictures', function(req, res) {
     var images;
     fs.readdir(path.join(__dirname, 'uploads'), function(err, files) {
-        images = files.map(function(file) {
-            return file;
+    images = files.map(function(file) {
+            return '/uploads/' + file;
         });
 
         res.send(images);
-    })
+    });
 });
 
 app.listen(3000, function() {

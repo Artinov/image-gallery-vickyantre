@@ -6,13 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Upload file demo</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 
 <body>
+<div class="wrapper">
     <form enctype='multipart/form-data' action="/upload" method="POST" id="uploadForm">
         <input type="file" name="fileupload-input" /> <br/>
         <button type="submit">Upload</button>
     </form>
+
+    <div id="placeForPictures">
+        
+    </div>
+
+
+    <div style="display:none" id="template">
+         <div class="image">
+         <img src="#" data-picture>         
+         <a href="" data-href target="blank">Повний розмір</a>
+         </div>
+    </div>
+</div>
+
+
 
     <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
     <script src="./client.js"></script>

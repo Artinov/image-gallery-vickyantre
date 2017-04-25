@@ -1,0 +1,17 @@
+.wrapper{
+	width: 70%;
+	margin: 0 auto;
+	padding-top: 15px;
+}
+
+.image{
+	width: 29%;
+	padding: 10px;
+	display: inline-block;
+}
+img{
+	width: 100%;
+}
+form{
+	padding-left: 10px;
+}
